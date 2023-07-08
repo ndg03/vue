@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/Vue.js"></script>
+</head>
+<!-- 需求： 练习： 定义两个html元素，一个是button ,一个事h2. 给标签一个显示的信息。 当点击button按钮时， 变量num初始值为1. 每次  乘2 当num 值大于100 是， 让h2 标签隐藏， 并在控制台打印num 的值。
+-->
+
+<body>
+    <div id="app">
+        <button v-on:click="fun()">点我乘2</button>
+        <h2 v-if="num<50">{{num}} amagi</h2>
+        <h3 v-show="num == 32"> amagi 要消失了，看控制台</h3>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                num: 1,
+            },
+            methods: {
+                fun() {
+                    this.num = this.num * 2;
+                    if (this.num > 100) {
+                        console.log(this.num);
+                        location.href = "https://ys.mihoyo.com/"
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

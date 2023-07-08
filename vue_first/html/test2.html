@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<script src="../js/Vue.js"></script>
+
+<body>
+    <div id="app">
+        输入姓名：<input type="text" v-model="name">
+        <button @click="fun">确定</button>
+        <br>
+
+        list:<span v-for="(item, index) in user" :key="index">{{item}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+        <hr>
+        <div v-for="(item, index) in user" :key="index">{{item}}</div>
+        <Ul>
+            <li v-for="(item, index) in user" :key="index">{{item}}</li>
+        </Ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "请输入",
+                user: ["蔡徐坤", "李易峰"]
+            },
+            methods: {
+                fun() {
+                    this.user.push(this.name);
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

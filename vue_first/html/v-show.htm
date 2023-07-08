@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/Vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 如果 值为true  就显示 ，否则隐藏 -->
+        <h1 v-show="show"> 我是一个h1标签的v-show  指令</h1>
+
+        <button @click="fun"> 显示/隐藏</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                show: true
+            },
+            methods: {
+                // 实现元素的显示和隐藏 对应值的切换
+                fun(){
+                    if(this.show == true){
+                        this.show = false;
+                    }else
+                    {
+                        this.show = true;
+                    }
+                }
+            }, 
+        })
+    </script>
+</body>
+</html>

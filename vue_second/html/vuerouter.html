@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue的js文件 -->
+    <script src="../js/Vue.js"></script>
+    <!-- 引入Vue router 的js文件 -->
+    <script src="../js/vue-router.js"></script>
+
+</head>
+
+<body>
+    <!-- 3.创建Vue视图 -->
+    <div id="app">
+        <h3>Vue router 实例</h3>
+        <!-- 4.设置路由的路径  to属性的值 就是路由路径地址 -->
+        <router-link to="/">首页</router-link>
+        <router-link to="/user">用户信息页</router-link>
+        <router-link to="/order">订单信息页</router-link>
+        <router-link to="/">购物车信息</router-link>
+        <hr>
+        <!-- 5.设置路由对应视图显示的位置即出口 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 6.定义路由的组件
+        var index = {
+            template: `
+                <div>
+                    <h2>首页信息</h2>
+                    <p>首页内容 </p>
+                </div>
+            `
+        }
+        var user = {
+            template: `
+                <div>
+                    <h2>用户信息</h2>
+                    <p>用户内容 </p>
+                </div>
+            `
+        }
+        var order = {
+            template: `
+                <div>
+                    <h2>订单信息</h2>
+                    <p>订单内容 </p>
+                </div>
+            `
+        }
+        var buy = {
+            template: `
+                <div>
+                    <h2>购物出信息</h2>
+                    <p>购物车内容 </p>
+                </div>
+            `
+        }
+
+        // 7.设置路由地址和组件的关系
+        const routes = [
+            { path: '/', component: index },
+            { path: '/user', component: user },
+            { path: '/order', component: order },
+            { path: '/buy', component: buy }
+        ]
+        // 8.创建Vue router的实例对象，传递路由参数
+        const router = new VueRouter({
+            routes //缩写，相当于es6 的写法
+        })
+
+
+
+        new Vue({
+            el: "#app",
+            router // 9.Vue router 实例在Vue 实例中进行挂载
+        })
+    </script>
+
+</body>
+
+</html>

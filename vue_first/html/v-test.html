@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/Vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{text}} {{num + 10}}</p>
+        <!-- v-text  指令的用法,不管里面的内容是否包含标签，都会用文本显示 -->
+        <p v-text="text"></p>
+
+        <!-- v-html 用来显示html内容， 如果包含html表签，会被浏览器渲染 -->
+        <p v-html="ht"></p>
+        <p>插值{{ht}}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                text: "我是一个文本数据",
+                num: 10,
+                ht: '<a href="https://ys.mihoyo.com/">启动</a>'
+            }
+        })
+    </script>
+</body>
+</html>

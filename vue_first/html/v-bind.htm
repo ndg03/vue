@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <a v-bind:href="hr">点我跳转</a>
+        <button @click="fun">点我 改变a标签的地址</button>
+        <img :src="im" alt="图片找不到">
+        <!-- 变量的拼接 -->
+        <img :src="'../img/' + address + '.jpg'" alt="找不到">
+        <!-- es6 语法实现字符和变量的拼接 -->
+        <img :src="`../img/${address}.jpg`" alt="找不到">
+
+        <img src="../img/元神.png" alt="">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                hr: "https://ys.mihoyo.com/",
+                im: "#",
+                address: "国旗"
+            },
+            methods: {
+                fun() {
+                    this.hr = "https://www.csgo.com.cn/#3"
+                    this.im = "../img/国旗.jpg"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

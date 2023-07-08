@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amagi</title>
+
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        第一Vue实例
+        <item></item>
+        <item></item>
+        <com></com>
+    </div>
+    <div id="aaa">
+        第二个Vue实例
+        <item></item>
+
+    </div>
+
+
+    <script>
+        //在Vue组件的前面定义局部组件
+        var item = {
+            template:
+                `
+                <div>
+                    <h3>局部组件1</h3>
+                    <p v-text="msg"></p>
+                </div>
+            `,
+            data() {
+                return {
+                    msg: "局部组件1中的数据"
+                }
+            }
+        }
+
+        var com = {
+            template:
+                `
+                <div>
+                    <h3>局部组件2</h3>
+                    <p v-text="msg"></p>
+                </div>
+            `,
+            data() {
+                return {
+                    msg: "局部组件2中的数据"
+                }
+            }
+        }
+
+        new Vue({
+            el: "#app",
+            components: {
+                //在Vue实例中通过注册组件，注册后才可以使用
+                "item": item,//key:value
+                com // es6新写法，如果组件属性名和属性值的变量名一致，可以胜率属性名不写
+            }
+        })
+
+        new Vue({
+            el: "#aaa",
+            //不注册无法使用
+            components: {
+                "item": item
+            }
+        })
+    </script>
+</body>
+
+</html>

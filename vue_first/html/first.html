@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1.1 通过 CDN 引入 全局vue.js文件 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <!--1.2 通过 本地下载的文件 -->
+    <script src="../js/Vue.js"></script>
+    
+</head>
+<body>
+    hello world!
+    <!--2. 创建一个视图 -->
+    <div id="app">
+        <!-- 6.在视图中引用Vue实例 -->
+        <h1>{{ mes }}</h1>
+        <!-- {{}} 是Vue中的插值表达式 可以从Vue实例中获取数据 -->
+        <p>{{ info }}</p>
+
+        <p>我的名字是{{ user.name}} ,今年 {{user.age}} 岁，性别{{user.gender}}</p>
+
+        <button @click="test1"> 点我一下</button>
+        <button v-on:click="test2"> 点我一下</button>
+        <button v-on:click="test3"> 点我一下</button>
+        
+    </div>
+
+
+    <script>
+        // 3. 创建Vue 实例
+        new Vue({
+            // 4.将Vue实例和 视图绑定
+            el: "#app",
+            data:{
+                //5. 存放视图中的数据
+                mes: "Hello World!!",
+                info:"amagi",
+                user:{name :"张三",age: 23,gender : "男"}
+            },
+
+            methods: {
+                test1: function(){
+                    console.log("方法被运行了！！");
+                },
+                test2(){
+                    this.mes = "改变mes的值";
+                },
+                test3(){
+                    location.href = "https://ys.mihoyo.com/"
+                }
+            }
+        })
+
+        function sum(a,b){
+            var su = a + b;
+            console.log("两个数的和是："+ su);
+            window.alert("哇真的是你啊")
+            return su;
+        }
+
+        var s = sum(10,20);
+        console.log("接受的返回值是："+ s);
+
+    </script>
+</body>
+</html>

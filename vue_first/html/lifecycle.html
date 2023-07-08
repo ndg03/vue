@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../js/Vue.js"></script>
+
+<body>
+    <div id="app">
+        {{info}}<input type="text" v-model="info">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                info: "你干嘛`"
+            },
+            methods: {
+
+            },
+            beforeCreate() {//Vue实例初始化之前
+                console.log("Vue实例初始化之前:" + this.info);
+            },
+            created() {
+                console.log("Vue实例初始化完成:" + this.info);
+            },
+            beforeMount() {
+                console.log("Vue实例和视图挂在之前:" + this.info);
+            },
+            mounted() {
+                console.log("Vue实例和视图挂在完成:" + this.info);
+            },
+            beforeUpdate() {
+                console.log("Vue中的内容修改前:" + this.info);
+            },
+            updated() {
+                console.log("Vue中的内容修改后:" + this.info);
+            },
+            beforeDestroy() {
+                console.log("Vue实例销毁前之前:" + this.info);
+            },
+            destroyed() {
+                console.log("Vue实例被销毁:" + this.info);
+            },
+        })
+    </script>
+</body>
+
+</html>

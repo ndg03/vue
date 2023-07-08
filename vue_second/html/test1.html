@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amagi</title>
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <amagi></amagi>
+    </div>
+
+
+    <script>
+
+        var amagi = {
+            template:
+                `
+            <div>
+                <h1 v-if="condition">你干嘛哎哟</h1>
+                哇真的是你呀
+                <br>
+                <button @click="fun">啊,rap</button>
+            </div>
+            `,
+            data() {
+                return {
+                    condition: false
+                }
+            },
+            methods: {
+                fun() {
+                    alert("amagi")
+                    if (this.condition == true) {
+                        this.condition = false;
+                    }
+                    else {
+                        this.condition = true;
+                    }
+                }
+            }
+        }
+
+        new Vue({
+            el: "#app",
+
+            components: {
+                amagi//es6  新写法
+            }
+        })
+    </script>
+</body>
+
+</html>

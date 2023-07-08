@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>第一个视图</h1>
+        {{info}}
+        <to-do></to-do>
+
+        <amagi></amagi>
+    </div>
+
+    <div id="aaa">
+        <hr>
+        <h1>第二个视图</h1>
+        <amagi></amagi>
+    </div>
+
+
+    <script>
+        //定义vue组件要放在Vue实例初始化之前
+        Vue.component("to-do", {
+            //模板中的html代码必须包含在一个根标签下
+            template: ` <div>
+                            <h3>全局组件</h3>
+                            <p>{{mes}}</p>
+                        </div> `,
+            data() {//data 必须写成函数
+                return {
+                    mes: "全局组件中的数据"
+                }
+            }
+        })
+
+        Vue.component("amagi", {
+            template:
+                `
+                <div>
+                    <h1>
+                        哇真的是你呀
+                        <p>你干嘛 哎哟</p>
+                        <h2>{{a}}<h2>
+                    </h1>
+                </div>
+            `,
+            data() {
+                return {
+                    a: "梅里猫"
+                }
+            }
+        })
+
+
+        new Vue({
+            el: "#app",
+            data: {
+                info: "hello"
+            }
+        })
+
+        new Vue({
+            el: "#aaa",
+            data() {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 如果 值为true  就显示 ，否则隐藏 -->
+        <h1 v-show="show"> 我是一个h1标签的v-show 指令</h1>
+
+        <button @click="fun"> v-show显示/隐藏</button>
+        <br>
+        <hr>
+        <!-- v-if  and  v-else  联合使用 在任何时候 这两个指令 只有一个会显示 -->
+        <h2 v-if="sh"> v-if指令的用法</h2>
+        <h2 v-else="sh"> v-else指令的用法</h2>
+        <button @click='funIf'>v-if显示/隐藏</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                show: true,
+                sh: true
+            },
+            methods: {
+                // 实现元素的显示和隐藏 对应值的切换
+                fun() {
+                    if (this.show == true) {
+                        this.show = false;
+                    } else {
+                        this.show = true;
+                    }
+                },
+                funIf() {
+                    if (this.sh == true) {
+                        this.sh = false;
+                    } else {
+                        this.sh = true;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

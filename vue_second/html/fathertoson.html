@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amagi</title>
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>父组件</h2>
+        <!-- 自定义一个属性mes 实现属性绑定 -->
+        <son :mes="info"></son>
+    </div>
+
+
+
+    <script>
+
+        var son = {
+            template:
+                `
+                <div>
+                    <h3>我是子组件</h3>
+                    <p>{{mes}}</p>
+                </div>
+            `,
+            props: ["mes"]
+        }
+
+        new Vue({
+            el: "#app",
+
+            components: {
+                son
+            },
+            data: {
+                info: "父组件中的数据"
+            }
+        })
+    </script>
+</body>
+
+</html>

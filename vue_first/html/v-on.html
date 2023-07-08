@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="count++"> 点我加加1--------->{{count}}</button>
+        <br>
+        <button v-on:click="fun"> 点我加加 2--------->{{count}}</button>
+        <br>
+        <button @click="fun1">点我 弹窗</button>
+        <br>
+        <button @click="sum(su,13)">求两个数的和：{{su}}</button>
+        <br>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                count: 0,
+                su: 0
+            },
+            methods: {
+                fun() {
+                    this.count = this.count + 2;
+                },
+                fun1() {
+                    //js当中的内置函数 
+                    alert("你干嘛！ 哎哟")
+                },
+                sum(a, b) {
+                    this.su = a + b;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

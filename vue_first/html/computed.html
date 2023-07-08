@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 获取当前的系统时间  某年某月某日 的格式 -->
+        <h2>{{new Date().getFullYear()}} 年{{new Date().getMonth()}} 月 {{new Date().getDate()}}日</h2>
+        <hr>
+        <h2>{{formatdate}}</h2>
+    </div>
+    <script src="../js/Vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+
+            },
+            computed: {
+                formatdate() {//计算属性可以将复杂的运算在计算属性所在的位置计算好后，在视图来显示
+                    //使得页面更简洁
+                    return `${new Date().getFullYear()}年${new Date().getMonth()}月${new Date().getDate()}日`
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

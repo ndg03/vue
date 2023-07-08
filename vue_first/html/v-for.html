@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/Vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>v-for 遍历循环数组</h3>
+        <ul>
+            <!-- v-for  指令对于数组的遍历  ，其中item是数组的元素，index是索引 -->
+            <li v-for="(item,key,index) in arr">{{item}} {{key}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="(value,key,index) in user">{{key}} : {{index}} : {{value}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="va in user">{{va}}</li>
+        </ul>
+        <hr>
+        <table border="1" cellspacing="0" cellpadding="2" width="600">
+            <th>姓名</th>
+            <th>爱好</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <tr v-for="(user, index) in demo">
+                <td v-for="(value) in user">{{value}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                arr: ["张三", "李易峰", "坤坤"],
+                user: { name: "罗志祥", hobby: "时间管理", age: 33, gender: "男" },
+                demo: [
+                    { name: "罗志祥", hobby: "时间管理", age: 33, gender: "男" },
+                    { name: "蔡徐坤", hobby: "打篮球", age: 26, gender: "女" },
+                    { name: "吴亦凡", hobby: "踩缝纫机", age: 40, gender: "男" },
+                    { name: "李易峰", hobby: "踩缝纫机", age: 30, gender: "女" }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
