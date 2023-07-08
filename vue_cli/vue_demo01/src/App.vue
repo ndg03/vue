@@ -17,11 +17,13 @@
     <data-com></data-com>
     <upload-com></upload-com> -->
     <!-- <rate-com></rate-com> -->
-    <form-com></form-com>
+    <!-- <form-com></form-com> -->
+    <table-com-vue></table-com-vue>
   </div>
 </template>
 <script>
-import FormCom from "./components/formCom.vue";
+// import FormCom from "./components/formCom.vue";
+import TableComVue from "./components/tableComVue.vue";
 // import UploadCom from "./components/uploadCom.vue";
 // import DataCom from "./components/dataCom.vue";
 // import CasterCom from "./components/casterCom.vue";
@@ -57,14 +59,12 @@ export default {
     // TimePicker,
     // DataCom,
     // RateCom,
-    FormCom,
+    // FormCom,
+    TableComVue,
   },
 };
 </script>
 
 <style>
-div {
-  width: 400px;
-}
 </style>
 

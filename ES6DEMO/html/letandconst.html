@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>amagi</h1>
+
+
+    <script>
+        var num = 10;
+        console.log(num);
+        {
+            var a = 20;
+            // let 声明的变量只能在它所在的大括号中访问
+            let c = 100;
+            console.log("括号内");
+            console.log("var:", a);
+            console.log("let", c);
+            console.log("括号内");
+        }
+        console.log("var:", a);
+        // console.log("let", c);
+
+        var g = 66;
+        var g = 88;
+        console.log(g);
+
+        let f = 33;
+        // let f =99;
+        // let 变量不允许重复声明
+        console.log(f);
+
+        // var 可以先使用再声明  ，但是是  未定义
+        console.log(sum);
+        var sum = "你干嘛"
+        // let 变量需要像定义再使用
+        // console.log(su);
+        // let su = 44;
+
+    </script>
+
+    <script>
+        // 常量必须初始化，一旦赋值不可以改变
+        const PI = 3.14
+    </script>
+</body>
+
+</html>

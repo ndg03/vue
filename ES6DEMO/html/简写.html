@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = "amagi"
+        let user1 = { name: name };
+        console.log(user1);
+
+        // 简写
+        let u = { name }
+        console.log(u);
+    </script>
+
+    <script>
+        // 方法简写
+        let user = {
+            name: "hhhh",
+
+            //  传统写法
+            sum: function () {
+                return 10 + 20;
+            },
+
+            // 简化写法
+            reduce() {
+                return 20 - 30;
+            }
+        }
+
+        var su = user.sum();
+        var re = user.reduce();
+
+        console.log(su);
+        console.log(re);
+    </script>
+</body>
+
+</html>

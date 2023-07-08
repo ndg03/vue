@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var st1 = "<div>" + "< p >" + " 这是一个段落" + "</p >" + "</div > ";
+        var st = `    <div>
+        <p>这是一个段落</p>
+    </div>`;
+        console.log(st);
+        console.log(st1);
+
+
+        var user = { name: "amagi", age: 12 }
+
+        var desc = "你敢嘛" + user.name + "年龄" + user.age;
+
+        //  模板字符串使用变量
+        var des = `我是 ${user.name} 今年  ${user.age}`
+        console.log(des);
+        console.log(desc);
+
+        // 模板字符换可以调用函数和简单的运算
+        let fun = function () { }
+        return 10 + 20;
+
+        let su = `两个数的和是 ${fun()},两个 数的差是 ${20 - 10}`;
+        console.log(su);
+
+    </script>
+</body>
+
+</html>

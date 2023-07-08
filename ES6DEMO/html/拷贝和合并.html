@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var user = { name: "hhh", age: 23 };
+
+        let dog = { gender: "man", color: "red" };
+
+        // 将上面两个对象合并为一个对象
+        let he = { ...user, ...dog };
+        console.log(he);
+
+        let aa = { phone: "1234", password: "4567" };
+        // let aa = { phone: "1234", password: "4567",...he };  也可以合并
+
+        let hb = { ...he, ...aa };
+        console.log(hb);
+    </script>
+</body>
+
+</html>

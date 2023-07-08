@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值</title>
+</head>
+
+<body>
+    <script>
+        let arr = [12, 3, 4];
+        //将数组中的元素赋值给x,y,z  变量
+        // 传统写法
+        let a = arr[0];
+        let b = arr[1];
+        let c = arr[2];
+        console.log(a, b, c);
+        // 结构赋值的写法
+        let [x, y, z] = arr;
+        console.log(x, y, z);
+    </script>
+
+    <script>
+        let user = { name: "amagi", age: 12, gender: "man" };
+        // 将对象的属性 赋值给三个变量
+        // es5  
+        let na = user.name;
+        let nb = user.age;
+        let nc = user.gender;
+        console.log(na, nb, nc);
+
+        // es6 结构赋值
+        // 等号左边匹配值时，从左向右，先匹配属性名,然后将右边的属性值给右边的变量名
+        // 如果变量名和 属性名不一致，将变量名写在属性的右侧，如果一致可以省略不写
+
+        let { name: aaa, age: ag, gender } = user;
+        console.log(aaa, ag, gender);
+
+    </script>
+</body>
+
+</html>
