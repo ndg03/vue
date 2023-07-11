@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认参数</title>
+</head>
+
+<body>
+    <script>
+        function demo(a, b, c = 88, d = 23) {
+            console.log(a, b, c, d);
+        }
+
+        demo(1, 2);// 1,2,88,23
+        demo(1, 2, undefined); // 1,2,88,23
+        demo(1, 2, null, 56);//1,2,null,56
+        demo(1, 2, 99, "");//1,2,99,''
+        demo(1, 2, 99, 100);//1,2,99,100
+    </script>
+</body>
+
+</html>

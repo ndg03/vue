@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1</title>
+</head>
+
+<body>
+    <script>
+        // 使用箭头函数 求一个数的立方
+        let fun1 = a => a * a * a;
+        console.log(fun1(2));
+
+        // 不定长参数，求累加和
+        let fun2 = (a, ...b) => {
+            let sum = 0;
+            sum += a;
+            for (const i of b) {
+                sum += i;
+            }
+            console.log("和是：", sum);
+        }
+        fun2(1, 2, 3, 4);
+    </script>
+
+
+</body>
+
+</html>

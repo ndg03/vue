@@ -18,12 +18,14 @@
     <upload-com></upload-com> -->
     <!-- <rate-com></rate-com> -->
     <!-- <form-com></form-com> -->
-    <table-com-vue></table-com-vue>
+    <!-- <table-com-vue></table-com-vue> -->
+    <home-work></home-work>
   </div>
 </template>
 <script>
+import HomeWork from "./components/homeWork.vue";
 // import FormCom from "./components/formCom.vue";
-import TableComVue from "./components/tableComVue.vue";
+// import TableComVue from "./components/tableComVue.vue";
 // import UploadCom from "./components/uploadCom.vue";
 // import DataCom from "./components/dataCom.vue";
 // import CasterCom from "./components/casterCom.vue";
@@ -60,7 +62,8 @@ export default {
     // DataCom,
     // RateCom,
     // FormCom,
-    TableComVue,
+    // TableComVue,
+    HomeWork,
   },
 };
 </script>

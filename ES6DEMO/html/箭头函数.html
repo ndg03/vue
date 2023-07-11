@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+
+<body>
+    <script>
+        function fun1(a, b) {
+            let sum = a + b;
+            return `两个数的和是：${sum}`;
+        }
+
+
+        let su = fun1(1, 2);
+        console.log(su);
+
+
+        // 用箭头函数
+        let fun2 = (a, b) => {
+            let sum = a + b;
+            return `箭头函数：${sum}`;
+        }
+        let s = fun2(1, 2);
+        console.log(s);
+
+        // 箭头函数的简写
+        // 如果只有一个参数，一个返回值，小括号 和大括号 以及 return 关键字都可以省略
+        // 求 x 的平方
+        let fun4 = function (x) {
+            return x * x;
+        }
+
+        console.log(fun4(2));
+
+        // 改写
+        let fun5 = x => x * x;
+        console.log(fun5(3));
+
+        // 如果方法没有 参数 或者多个参数，此时，小括号不能省略
+        let fun6 = function () {
+            console.log("函数没有参数");
+        }
+
+        fun6();
+        // 如果箭头函数只有 一条语句，大括号也能省略
+        let fun7 = () => console.log("箭头函数没有参数");
+        fun7();
+        // 如果有多个参数且有多条语句，则 大小括号都不能省略
+        let fun8 = (a, b, c) => {
+            console.log(a, b, c);
+            return `三个数的和是 ${a + b + c}`;
+        }
+        console.log(fun8(1, 2, 3));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不定参数</title>
+</head>
+
+<body>
+
+    <script>
+        // 对于不定参数可以不给值，也可以给定多个值，不定参数的本质是 一个数组
+        // 一个函数只能有一个不定参数
+        function demo(a, b, ...c) {
+            console.log(a, b, c, "不定参数的长度是：", c.length);
+        }
+        demo(1, 2, 3, 4, 5)
+        demo(1, 2, 3)
+        demo(4, 5)
+    </script>
+
+</body>
+
+</html>
